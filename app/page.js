@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { db } from "../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Image from "next/image";
-import Navbar from "../components/Navbar"; // Assurez-vous que le chemin est correct
+import Navbar from "../components/NavBar"; 
 
 export default function Home() {
   const [products, setProducts] = useState([]);

@@ -1,3 +1,5 @@
+// pages/login.js
+
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { auth } from "../config/firebase";
