@@ -1,5 +1,3 @@
-// components/Navbar.js
-
 import Link from 'next/link';
 import { useAuth } from '../hooks/useAuth';
 
