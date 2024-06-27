@@ -1,12 +1,11 @@
-// app/page.js
-
 "use client";
 
 import { useEffect, useState } from "react";
 import { db } from "../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Image from "next/image";
-import Navbar from "../components/Navbar"; // Assurez-vous que le chemin est correct
+import Navbar from "../components/NavBar";
+import Products from "../../data/products.json"
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -18,7 +17,7 @@ export default function Home() {
         id: doc.id,
         ...doc.data(),
       }));
-      setProducts(productsList);
+      setProducts(Products);
     };
     fetchProducts();
   }, []);
@@ -27,11 +26,12 @@ export default function Home() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Produit ajouté au panier !");
   };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <Navbar /> {/* Intégration du composant Navbar ici */}
+      <Navbar />
       <div className="p-24">
         <h1 className="text-4xl font-bold mb-8">Marketplace</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
