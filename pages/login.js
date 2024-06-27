@@ -21,6 +21,8 @@ export default function Login() {
   };
 
   return (
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-4xl font-bold mb-8">Sign Up</h1>
     <form onSubmit={handleLogin}>
       <input
         type="email"
@@ -36,5 +38,6 @@ export default function Login() {
       />
       <button type="submit">Login</button>
     </form>
+    </div>
   );
 }
