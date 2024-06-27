@@ -5,7 +5,7 @@ import { db } from "../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Image from "next/image";
 import Navbar from "../components/NavBar";
-import Products from "../../data/products.json"
+import Products from "../../data/products"
 
 export default function Home() {
   const [products, setProducts] = useState([]);
