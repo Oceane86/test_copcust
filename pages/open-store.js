@@ -3,6 +3,7 @@ import { db } from "../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { auth } from "../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import React from "react";
 
 export default function OpenStore() {
   const [user] = useAuthState(auth);
