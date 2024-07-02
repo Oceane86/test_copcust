@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { auth, db } from "../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import "../styles/signup.css";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -47,46 +48,56 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-4xl font-bold mb-8">Création du compte</h1>
-      <form onSubmit={handleSignup} className="flex flex-col gap-4">
-        <input
-          type="text"
-          placeholder="First Name"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          className="border p-2 rounded"
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          className="border p-2 rounded"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="border p-2 rounded"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="border p-2 rounded"
-        />
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-          Sign Up
-        </button>
-        {signupError && <p className="text-red-500">{signupError}</p>}
-      </form>
-      
-      {signupSuccess && (
-        <p className="mt-4 text-green-600">Account created successfully. Redirecting to marketplace...</p>
-      )}
+    <div className="container">
+      <div className="signup-box">
+        <h1>Parles nous de toi</h1>
+        <form onSubmit={handleSignup} className="signup-form">
+          <label htmlFor="email" className="sr-only">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="input-field"
+            required
+            aria-required="true"
+          />
+          <label htmlFor="password" className="sr-only">Mots de passe</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input-field"
+            required
+            aria-required="true"
+          />
+         
+         <small className="password-requirements">
+            • 8 caractères minimum, un numéro,<br />
+            • un caractère spatial, #@,[?/.;:<br />
+            • une Majuscule minimum,<br />
+            • une minuscule minimum
+          </small>
+          
+          <button type="submit" className="signup-button">
+            <a href="/verification">
+            Valider
+            </a>
+            </button>
+          {signupError && <p className="error-message">{signupError}</p>}
+        </form>
+
+        <p className="account">
+            <a href="/login" className="signup-link">J'ai déjà un compte{" "}</a>
+          </p>
+        
+        {signupSuccess && (
+          <p className="success-message">Account created successfully. Redirecting to marketplace...</p>
+        )}
+      </div>
     </div>
   );
 }

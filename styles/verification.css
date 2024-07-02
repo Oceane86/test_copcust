@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .verificationBox {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+  }
+  
+  .verificationBox h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .verificationBox p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .inputContainer {
+    margin-bottom: 20px;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .resendLink {
+    margin-bottom: 20px;
+  }
+  
+  .resendLink a {
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 2px;
+  }
+  
+  .resendLink a:hover {
+    text-decoration: underline;
+  }
+  
+  .submitButton {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .submitButton button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submitButton button:hover {
+    background-color: #333333;
+  }
+  
+  .errorMessage {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .successMessage {
+    color: green;
+    font-weight: bold;
+  }
+  
